@@ -1,0 +1,24 @@
+{
+  "name": "konige-backend",
+  "version": "1.0.0",
+  "description": "Backend para aplicação de cadastro de livros favoritos - Bit Stone Library",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["books", "library", "favorites"],
+  "author": "Leonardo Creattive",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

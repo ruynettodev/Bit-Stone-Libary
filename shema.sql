@@ -1,0 +1,18 @@
+CREATE TABLE books (
+  id BIGSERIAL PRIMARY KEY,
+  titulo VARCHAR(255) NOT NULL,
+  autor VARCHAR(255) NOT NULL,
+  ano INTEGER NOT NULL,
+  lido BOOLEAN DEFAULT FALSE,
+  favorito BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL
+);
+
+ALTER TABLE books ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Enable all operations for all users" ON books
+FOR ALL USING (true) WITH CHECK (true);
+
+-- Para atualizar tabela existente:
+-- ALTER TABLE books ADD COLUMN favorito BOOLEAN DEFAULT FALSE;
