@@ -24,7 +24,7 @@ app.use(cors({
     if (!origin) return callback(null, true);
 
     // Permitir origens da lista ou URLs da Vercel
-    if (allowedOrigins.includes(origin)  origin.endsWith('.vercel.app')) {
+    if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
       return callback(null, true);
     }
 
@@ -65,9 +65,9 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(🚀 Servidor rodando na porta ${PORT});
-  console.log(📚 API Konige - Biblioteca de Livros Favoritos);
-  console.log(🔗 Health check: http://localhost:${PORT}/health);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log(`📚 API Konige - Biblioteca de Livros Favoritos`);
+  console.log(`🔗 Health check: http://localhost:${PORT}/health`);
 });
 
 module.exports = app;
